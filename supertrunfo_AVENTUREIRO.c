@@ -15,6 +15,8 @@ struct Trunfo{
     float area; //area da cidade em quilometros
     float PIB; //produto interno bruto da cidade
     int Pontos_turisticos; //quantidade de pontos turisticos
+    float Densidade_Populacional; //o número de habitantes por quilômetro quadrado
+    float PIB_per_Capita; //a riqueza média por pessoa na cidade
 };
 
 struct Trunfo carta1; //variavel do tipo estrutura
@@ -36,6 +38,10 @@ scanf("%f", &carta1.PIB);
 printf("Quantos pontos turisticos tem: \n");
 scanf("%d", &carta1.Pontos_turisticos);
 
+ // Valores da Densidade e PIB e da 1ª carta
+    carta1.Densidade_Populacional = carta1.habitantes / carta1.area;
+    carta1.PIB_per_Capita = carta1.PIB / carta1.habitantes;
+    
 struct Trunfo carta2; //variavel do tipo estrutura
 //cartas
 //cadastro da segunda carta
@@ -55,6 +61,10 @@ scanf("%f", &carta2.PIB);
 printf("Quantos pontos turisticos tem: \n");
 scanf("%d", &carta2.Pontos_turisticos);
 
+ // Valores da Densidade e PIB e da 2ª carta
+    carta2.Densidade_Populacional = carta2.habitantes / carta2.area;
+    carta2.PIB_per_Capita = carta2.PIB / carta2.habitantes;
+
 //EXIBIÇÃO PRIMEIRA CARTA
 
 printf("\nPrimeira carta: \n");
@@ -65,7 +75,9 @@ printf("População: %d\n", carta1.habitantes);
 printf("Área: %.2f km²\n", carta1.area);
 printf("PIB:%.2f bilhões de reais\n", carta1.PIB);
 printf("Número de Pontos Turísticos: %d\n",carta1.Pontos_turisticos);
-
+printf("Densidade Populacional: %.2f hab/km²\n", carta1.Densidade_Populacional);
+printf("PIB per Capita: %.2f reais\n", carta1.PIB_per_Capita);
+    
 //EXIBIÇÃO SEGUNDA CARTA
 
 printf("\nSegunda carta: \n");
@@ -76,6 +88,8 @@ printf("População: %d\n", carta2.habitantes);
 printf("Área: %.2f km²\n", carta2.area);
 printf("PIB:%.2f bilhões de reais\n", carta2.PIB);
 printf("Número de Pontos Turísticos: %d\n",carta2.Pontos_turisticos);
-
+printf("Densidade Populacional: %.2f hab/km²\n", carta2.Densidade_Populacional);
+printf("PIB per Capita: %.2f reais\n", carta2.PIB_per_Capita);
+    
 return 0;
 }
