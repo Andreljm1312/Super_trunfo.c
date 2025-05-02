@@ -63,7 +63,7 @@ scanf("%d", &carta2.Pontos_turisticos);
 
  // Valores da Densidade e PIB e da 2ª carta
     carta2.Densidade_Populacional = carta2.habitantes / carta2.area;
-    carta2.PIB_per_Capita = carta2.PIB / carta2.habitantes;
+    carta2.PIB_per_Capita = carta2.PIB * 1000000000 / carta2.habitantes;
 
 //EXIBIÇÃO PRIMEIRA CARTA
 
