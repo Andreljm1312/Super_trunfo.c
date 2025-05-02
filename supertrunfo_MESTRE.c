@@ -40,7 +40,10 @@ scanf("%d", &carta1.Pontos_turisticos);
 
  // Valores da Densidade e PIB e da 1ª carta
     carta1.Densidade_Populacional = carta1.habitantes / carta1.area;
-    carta1.PIB_per_Capita = carta1.PIB * 1000000000 / carta1.habitantes;
+    carta1.PIB_per_Capita = (carta1.PIB * 1000000000) / carta1.habitantes;
+
+//calculo do Super Poder
+    carta1.super_poder = ((float)carta1.habitantes + carta1.area + carta1.PIB + carta1.Pontos_turisticos + carta1.PIB_per_Capita) + (1/ carta1.Densidade_Populacional);
     
 struct Trunfo carta2; //variavel do tipo estrutura
 //cartas
@@ -63,8 +66,12 @@ scanf("%d", &carta2.Pontos_turisticos);
 
  // Valores da Densidade e PIB e da 2ª carta
     carta2.Densidade_Populacional = carta2.habitantes / carta2.area;
-    carta2.PIB_per_Capita = carta2.PIB * 1000000000 / carta2.habitantes;
+    carta2.PIB_per_Capita = (carta2.PIB * 1000000000) / carta2.habitantes;
 
+//calculo do Super Poder
+    carta2.super_poder = ((float)carta2.habitantes + carta2.area + carta2.PIB + carta2.Pontos_turisticos + carta2.PIB_per_Capita) + (1/ carta2.Densidade_Populacional);
+
+    
 //EXIBIÇÃO PRIMEIRA CARTA
 
 printf("\nPrimeira carta: \n");
@@ -90,6 +97,45 @@ printf("PIB:%.2f bilhões de reais\n", carta2.PIB);
 printf("Número de Pontos Turísticos: %d\n",carta2.Pontos_turisticos);
 printf("Densidade Populacional: %.2f hab/km²\n", carta2.Densidade_Populacional);
 printf("PIB per Capita: %.2f reais\n", carta2.PIB_per_Capita);
-    
+
+// Comparações de cartas
+
+    printf("Comparação das Cartas:\n");
+
+    // Habitantes (maior população vence)
+    printf("População: Carta %d venceu (%d)\n",
+           (carta1.habitantes > carta2.habitantes) * 1 + (carta2.habitantes >= carta1.habitantes) * 2,
+           carta1.habitantes > carta2.habitantes);
+
+    // Área em KM (maior vence)
+    printf("Área: Carta %d venceu (%d)\n",
+           (carta1.area > carta2.area) * 1 + (carta2.area >= carta1.area) * 2,
+           carta1.area > carta2.area);
+
+    // PIB (maior vence)
+    printf("PIB: Carta %d venceu (%d)\n",
+           (carta1.PIB > carta2.PIB) * 1 + (carta2.PIB >= carta1.PIB) * 2,
+           carta1.PIB > carta2.PIB);
+
+    // Pontos Turísticos (maior vence) - CORRIGIDO
+    printf("Pontos Turísticos: Carta %d venceu (%d)\n",
+           (carta1.Pontos_turisticos > carta2.Pontos_turisticos) * 1 + (carta2.Pontos_turisticos >= carta1.Pontos_turisticos) * 2,
+           carta1.Pontos_turisticos > carta2.Pontos_turisticos);
+
+    // Densidade Populacional (menor vence)
+    printf("Densidade Populacional: Carta %d venceu (%d)\n",
+           (carta1.Densidade_Populacional < carta2.Densidade_Populacional) * 1 + (carta1.Densidade_Populacional > carta2.Densidade_Populacional) * 2,
+           carta1.Densidade_Populacional < carta2.Densidade_Populacional);
+
+    // PIB per Capita (maior vence)
+    printf("PIB per Capita: Carta %d venceu (%d)\n",
+           (carta1.PIB_per_Capita > carta2.PIB_per_Capita) * 1 + (carta2.PIB_per_Capita >= carta1.PIB_per_Capita) * 2,
+           carta1.PIB_per_Capita > carta2.PIB_per_Capita);
+
+    // Super Poder (maior vence)
+    printf("Super Poder: Carta %d venceu (%d)\n",
+           (carta1.super_poder > carta2.super_poder) * 1 + (carta2.super_poder >= carta1.super_poder) * 2,
+           carta1.super_poder > carta2.super_poder);
+
 return 0;
 }
