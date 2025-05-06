@@ -104,7 +104,7 @@ printf("PIB per Capita: %.2f reais\n", carta2.PIB_per_Capita);
 printf("Comparação de cartas (Atributo: População):\n");
 printf("Carta 1 - %d\n"carta1.habitantes)
 printf("Carta 2 - %d\n"carta2.habitantes)
-     if(populacao > populacao2) {
+     if(carta1.habitantes > carta2.habitantes) {
          printf("Resultado: Carta 1(%c) venceu\n", carta1.estado");
      } else {
          printf("Resultado: Carta 2(%c) venceu\n", carta2.estado");
@@ -115,7 +115,7 @@ printf("Carta 2 - %d\n"carta2.habitantes)
 printf("Comparação de cartas (Atributo: Área):\n");
 printf("Carta 1 - %d\n", carta1.area)
 printf("Carta 2 - %d\n", carta2.area)
-     if(populacao > populacao2) {
+     if(carta1.area > carta2.area) {
         printf("Resultado: Carta 1(%c) venceu\n", carta1.estado");
      } else {
          printf("Resultado: Carta 2(%c) venceu\n", carta2.estado");
@@ -126,7 +126,7 @@ printf("Carta 2 - %d\n", carta2.area)
 printf("Comparação de cartas (Atributo: PIB):\n");
 printf("Carta 1 - %.2f\n", carta1.PIB)
 printf("Carta 2 - %.2f\n", carta2.PIB)
-     if(populacao > populacao2) {
+     if(carta1.PIB > carta2.PIB) {
          printf("Resultado: Carta 1(%c) venceu\n", carta1.estado");
      } else {
          printf("Resultado: Carta 2(%c) venceu\n", carta2.estado");
@@ -137,12 +137,22 @@ printf("Carta 2 - %.2f\n", carta2.PIB)
 printf("Comparação de cartas (Atributo: Densidade Populacional):\n");
 printf("Carta 1 - %.2f hab/km²\n"carta1.Densidade_Populacional);
 printf("Carta 2 - %.2f hab/km²\n"carta2.Densidade_Populacional);
-     if(populacao > populacao2) {
+     if(carta2.Densidade_Populacional > carta1.Densidade_Populacional) {
         printf("Resultado: Carta 1(%c) venceu\n", carta1.estado");
      } else {
          printf("Resultado: Carta 2(%c) venceu\n", carta2.estado");
      }
-
+    
+ //PIB PER CAPITA
+  /
+printf("Comparação de cartas (Atributo: Densidade Populacional):\n");
+printf("Carta 1 - %.2f reais\n"carta1.PIB_per_Capita);
+printf("Carta 2 - %.2f reais\n"carta2.PIB_per_Capita);
+     if(carta1.PIB_per_Capita > carta2.PIB_per_Capita) {
+        printf("Resultado: Carta 1(%c) venceu\n", carta1.estado");
+     } else {
+         printf("Resultado: Carta 2(%c) venceu\n", carta2.estado");
+     }
 
   
  return 0;
