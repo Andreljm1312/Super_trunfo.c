@@ -43,7 +43,7 @@ scanf("%d", &carta1.Pontos_turisticos);
     carta1.PIB_per_Capita = (carta1.PIB * 1000000000) / carta1.habitantes;
 
 //calculo do Super Poder
-    carta1.super_poder = ((float)carta1.habitantes + carta1.area + carta1.PIB + carta1.Pontos_turisticos + carta1.PIB_per_Capita) + (1/ carta1.Densidade_Populacional);
+    carta1.super_poder = ((float)carta1.habitantes + carta1.area + carta1.PIB + carta1.Pontos_turisticos + carta1.PIB_per_Capita) + (1.0f/ carta1.Densidade_Populacional);
     
 struct Trunfo carta2; //variavel do tipo estrutura
 //cartas
@@ -69,7 +69,7 @@ scanf("%d", &carta2.Pontos_turisticos);
     carta2.PIB_per_Capita = (carta2.PIB * 1000000000) / carta2.habitantes;
 
 //calculo do Super Poder
-    carta2.super_poder = ((float)carta2.habitantes + carta2.area + carta2.PIB + carta2.Pontos_turisticos + carta2.PIB_per_Capita) + (1/ carta2.Densidade_Populacional);
+    carta2.super_poder = ((float)carta2.habitantes + carta2.area + carta2.PIB + carta2.Pontos_turisticos + carta2.PIB_per_Capita) + (1.0f/ carta2.Densidade_Populacional);
 
     
 //EXIBIÇÃO PRIMEIRA CARTA
@@ -102,8 +102,8 @@ printf("PIB per Capita: %.2f reais\n", carta2.PIB_per_Capita);
   //população
 
 printf("Comparação de cartas (Atributo: População):\n");
-printf("Carta 1 - %d\n"carta1.habitantes)
-printf("Carta 2 - %d\n"carta2.habitantes)
+printf("Carta 1 - %d\n", carta1.habitantes)
+printf("Carta 2 - %d\n", carta2.habitantes)
      if(carta1.habitantes > carta2.habitantes) {
          printf("Resultado: Carta 1(%c) venceu\n", carta1.estado");
      } else {
@@ -140,7 +140,7 @@ printf("Carta 2 - %.2f hab/km²\n"carta2.Densidade_Populacional);
      if(carta2.Densidade_Populacional > carta1.Densidade_Populacional) {
         printf("Resultado: Carta 1(%c) venceu\n", carta1.estado");
      } else {
-         printf("Resultado: Carta 2(%c) venceu\n", carta2.estado");
+         printf("Resultado: Carta 2(%c) venceu\n", carta2.estado"); // Menor densidade ganha
      }
     
  //PIB PER CAPITA
@@ -153,7 +153,7 @@ printf("Carta 2 - %.2f reais\n"carta2.PIB_per_Capita);
      } else {
          printf("Resultado: Carta 2(%c) venceu\n", carta2.estado");
      }
-
+    
   
  return 0;
  }
