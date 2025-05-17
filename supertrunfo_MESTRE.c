@@ -17,6 +17,7 @@ struct Trunfo{
     int Pontos_turisticos; //quantidade de pontos turisticos
     float Densidade_Populacional; //o número de habitantes por quilômetro quadrado
     float PIB_per_Capita; //a riqueza média por pessoa na cidade
+    float super_poder; // super poder da cidade
 };
 
 struct Trunfo carta1; //variavel do tipo estrutura
@@ -24,7 +25,7 @@ struct Trunfo carta1; //variavel do tipo estrutura
 //cadastro da primeria carta
 printf("cadastre a 1° carta:\n");
 printf("Uma letra de 'A' a 'H' (representando um dos oito estados): \n");
-scanf("%c", &carta1.estado);
+scanf(" %c", &carta1.estado);
 printf("digite o codigo da carta de 01 a 04(ex: A01,B03): \n");
 scanf("%3s", carta1.codigo);
 printf("Digite o nome da cidade: \n");
@@ -43,7 +44,7 @@ scanf("%d", &carta1.Pontos_turisticos);
     carta1.PIB_per_Capita = (carta1.PIB * 1000000000) / carta1.habitantes;
 
 //calculo do Super Poder
-    carta1.super_poder = ((float)carta1.habitantes + carta1.area + carta1.PIB + carta1.Pontos_turisticos + carta1.PIB_per_Capita) + (1/ carta1.Densidade_Populacional);
+    carta1.super_poder = ((float)carta1.habitantes + carta1.area + carta1.PIB + carta1.Pontos_turisticos + carta1.PIB_per_Capita) + (1.0f/ carta1.Densidade_Populacional);
     
 struct Trunfo carta2; //variavel do tipo estrutura
 //cartas
