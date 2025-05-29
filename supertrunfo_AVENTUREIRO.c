@@ -40,7 +40,7 @@ scanf("%d", &carta1.Pontos_turisticos);
 
  // Valores da Densidade e PIB e da 1ª carta
     carta1.Densidade_Populacional = carta1.habitantes / carta1.area;
-    carta1.PIB_per_Capita = carta1.PIB * 1000000000 / carta1.habitantes;
+    carta1.PIB_per_Capita = (carta1.PIB * 1000000000) / carta1.habitantes;
     
 struct Trunfo carta2; //variavel do tipo estrutura
 //cartas
@@ -63,7 +63,7 @@ scanf("%d", &carta2.Pontos_turisticos);
 
  // Valores da Densidade e PIB e da 2ª carta
     carta2.Densidade_Populacional = carta2.habitantes / carta2.area;
-    carta2.PIB_per_Capita = carta2.PIB / carta2.habitantes;
+    carta2.PIB_per_Capita = (carta2.PIB * 1000000000) / carta2.habitantes;
 
 //EXIBIÇÃO PRIMEIRA CARTA
 
@@ -93,3 +93,4 @@ printf("PIB per Capita: %.2f reais\n", carta2.PIB_per_Capita);
     
 return 0;
 }
+
